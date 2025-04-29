@@ -27,9 +27,10 @@ func loadKC(key: String) -> String? {
     }
 }
 
-func deleteKC(key: String) {
+func deleteKC(key: String) -> Bool {
     let keychain = Keychain(service: Constants.myKeychain)
     keychain[key] = nil
+    return keychain[key] == nil
 }
 
 //SEMANTIC VERSIONING
