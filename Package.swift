@@ -11,11 +11,18 @@ let package = Package(
             name: "KCLibrarySwift",
             targets: ["KCLibrarySwift"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/kishikawakatsumi/KeychainAccess.git",
+                 .upToNextMajor(from: "4.2.2"))
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "KCLibrarySwift"),
-
+            name: "KCLibrarySwift",
+            dependencies: [
+                .product(name: "KeychainAccess", package: "KeychainAccess"),
+            ]
+        ),
     ]
 )
