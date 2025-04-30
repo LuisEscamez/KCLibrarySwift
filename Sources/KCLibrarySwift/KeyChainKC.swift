@@ -13,7 +13,7 @@ public class KeychainManager: KeyChainKC {
         return KeychainManager()
     }
     
-    public init() {}
+   init() {}
     
     public func setKC(key: String, value: String) -> Bool {
         saveKC(key: key, value: value)
