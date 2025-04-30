@@ -9,7 +9,7 @@ public protocol KeyChainKC {
 }
 
 public class KeychainManager: KeyChainKC {
-    static var shared: KeyChainKC {
+    static public var shared: KeyChainKC {
         return KeychainManager()
     }
     
